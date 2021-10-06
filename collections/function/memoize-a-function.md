@@ -7,8 +7,8 @@ category: Function
 const memoize = (fn) =>
     (
         (cache = {}) =>
-        (arg) =>
-            cache[arg] || (cache[arg] = fn(arg))
+        (...args) =>
+            cache[args] || (cache[args] = fn(...args))
     )();
 
 // Example
